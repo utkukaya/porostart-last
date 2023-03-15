@@ -1,19 +1,19 @@
 {
   "short_name": "Porost Art",
-  "name": "Create React App Sample",
+  "name": "Poros Art",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "porosartweblogo.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "porosartweblogo.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "porosartweblogo.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }

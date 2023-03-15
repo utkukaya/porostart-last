@@ -40,7 +40,7 @@ const Navbar = () => {
 
   const networks = social.map(function (network) {
     return (
-      <SocialIcon size={20} url={network.url} bgColor={"white"} style={{ marginLeft: "20px", height: isMobile() ? 20 : 35, width: isMobile() ? 20 : 35 }} />
+      <SocialIcon size={20} url={network.url} bgColor={"white"} style={{ marginLeft: "50px", height: isMobile() ? 20 : 35, width: isMobile() ? 20 : 35 }} />
 
     );
   });
@@ -66,76 +66,43 @@ const Navbar = () => {
       <div className="videoContainer" style={{ zIndex: -1 }}>
         <div className="videoPlacer">
           <div style={{ position: "relative", paddingBottom: "56.25%", overflow: "hidden" }}>
-            {/* <video autoplay="" muted="" loop="" playsinline="" id="vid" preload="auto" width="100%"> */}
-            {/* <video  autoPlay="autoplay" loop="loop" muted defaultMuted playsinline>
-
-              <source src={isMobile() ? "./dikeyVideo.mp4" :"images/backgroundVideo.mp4"} />
-              
-            </video> */}
             <video autoPlay loop muted playsInline width={"100%"}>
-
-            <source src={isMobile() ? "images/dikeyVideo.mp4" :"images/backgroundVideo.mp4"} />
-              
-              </video>
-            {/* <video ref={videoRef}>
-              <source
-                src="./dikeyVideo.mp4"
-                type="video/mp4"
-              />
-            </video> */}
-
+              <source src={isMobile() ? "images/dikeyVideo.mp4" : "images/backgroundVideo.mp4"} />
+            </video>
           </div>
 
         </div>
       </div>
-      <nav id="nav-wrap">
+      <nav id="nav-wrap" style={{zIndex: 120000}}>
         <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
           {/* Show navigation */}
-          <div class="line" style={{width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute"}}></div>
+          <div class="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
         </a>
         <a className="mobile-btn" href="#home" title="Hide navigation">
+          <div class="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
+
           {/* Hide navigation */}
         </a>
 
         <ul id="nav" className="nav">
-          <li className="current">
-            {/* <a className="smoothscroll" href="#">
-              Hakkımızda
-            </a> */}
-            <Link to="/hakkımızda">Hakkımızda</Link>
+          <li className="current" style={{fontFamily: "Inter-Bold"}}>
+            <Link to="/hakkımızda">HAKKIMIZDA</Link>
+          </li>
+          <li style={{fontFamily: "Inter-Bold"}}>
+            <Link to="/ekip">EKİP</Link>
           </li>
 
-          <li>
+          <li style={{fontFamily: "Inter-Bold"}}> 
             <a className="smoothscroll" href="#oyunlar">
-              Oyunlar
+              OYUNLAR
             </a>
           </li>
-
-          {/* <li>
-              <a className="smoothscroll" href="#resume">
-                Resume
-              </a>
-            </li> */}
-          {/* 
-            <li>
-              <a className="smoothscroll" href="#portfolio">
-                Works
-              </a>
-            </li> */}
-
-          <li>
-          <Link to="/atölye">Atölye</Link>
-
-            {/* <a className="smoothscroll" href="#calendar">
-              Atölye
-                          <Link to="/hakkımızda">Hakkımızda</Link>
-
-            </a> */}
+          <li style={{fontFamily: "Inter-Bold"}}>
+            <Link to="/atölye">ATÖLYE</Link>
           </li>
-          {/* https://www.biletix.com/etkinlik/2CB16/TURKIYE/tr */}
-          <li>
+          <li style={{fontFamily: "Inter-Bold"}}>
             <a className="smoothscroll" href="https://www.biletix.com/etkinlik/2CB16/TURKIYE/tr">
-              Bilet Al
+              BİLET AL
             </a>
           </li>
         </ul>
@@ -143,36 +110,31 @@ const Navbar = () => {
 
       <div className="left" >
         <ul className="navbar" >
-          <li>
-          <Link to="/hakkımızda" style={{fontWeight: 500}}>Hakkımızda</Link>
+          <li  style={{fontSize: "10px"}}>
+            <Link to="/hakkımızda" style={{ fontWeight: 500 }}>HAKKIMIZDA</Link>
+          </li>
+          <li className="current">
+          <Link to="/ekip" style={{ fontWeight: 500 }}>EKİP</Link>
           </li>
           <li>
-            <a href="#oyunlar" style={{ fontWeight: 500 }}>Oyunlar</a>
+            <a href="#oyunlar" style={{ fontWeight: 500 }}>OYUNLAR</a>
           </li>
 
           <li>
-            <Link to="/atölye" style={{fontWeight: 500}}>Atölye</Link>
-            {/* <a href="#calendar" style={{ fontWeight: 500 }}>Atölye</a> */}
+            <Link to="/atölye" style={{ fontWeight: 500 }}>ATÖLYE</Link>
           </li>
           <li>
             <a className="smoothscroll" href="https://www.biletix.com/etkinlik/2CB16/TURKIYE/tr" style={{ fontWeight: 500 }}>
-              Bilet Al
+              BİLET AL
             </a>
           </li>
         </ul>
 
       </div>
       <div className="mid" style={{ marginLeft: "auto", marginRight: !isMobile() && "auto" }}>
-        {/* <ul className="navbar" > */}
-        {/* <li> */}
-
         <a href="#">
-          <img style={{ width: isMobile() ? 120 : "80%", borderRadius: 8, marginTop: 20, marginLeft: 10 }} src={"images/logo2.png"}></img>
+          <img style={{ width: isMobile() ? 100 : "100%", borderRadius: 8, marginTop: 20, marginLeft: isMobile() ? 0 : 30 }} src={"images/porosartlogowhite.png"}></img>
         </a>
-        {/* </li> */}
-
-        {/* </ul> */}
-
       </div>
       <div className="right">
         <ul style={{ height: 20 }}>{networks}</ul>

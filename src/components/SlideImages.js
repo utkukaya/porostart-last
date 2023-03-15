@@ -1,100 +1,3 @@
-// import React from "react";
-// import { Slide, Zoom } from "react-slideshow-image";
-// import "react-slideshow-image/dist/styles.css";
-// import "./component-style/slide.css";
-
-// export const SlideImages = () => {
-//   const slideImages = [{
-//     image:  "images/image1.jpg"
-//   },
-//   {
-//     image:  "images/image2.jpg"
-//   },
-//   {
-//     image:  "images/image3.jpg"
-//   },
-//   {
-//     image:  "images/image4.jpg"
-//   },
-//   {
-//     image:  "images/image5.jpg"
-//   },
-
-
-
-//   //  ,
-//   //   "images/image2.jpg",
-//   //   "images/image3.jpg",
-//     // "images/image4.jpg",
-//     // "images/image5.jpg",
-//     // "images/image6.jpg"
-//   ];
-
-//   // slideImages.map(image, i => console.log("ima: ", i))
-//   // slideImages.map((e, idx) => 
-//   //   console.log("i : ", idx % 4)
-//   // )
-//   const spanStyle = {
-//     padding: '20px',
-//     background: '#efefef',
-//     color: '#000000'
-//   }
-
-//   const divStyle = {
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     backgroundSize: 'cover',
-//     height: '400px'
-//   }
-
-//   return (
-//     <div className="slide-container">
-//         <Zoom scale={0.4}>
-//           {
-//             slideImages.map((each, index) => <img key={index} style={{height: 500}} src={each.image} />)
-//           }
-//         </Zoom>
-//       </div>
-
-//     // <div className="slide-container">
-//     //     <Slide>
-//     //      {slideImages.map((slideImage, index)=> (
-//     //         <div key={index}>
-//     //           <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.image})` }}>
-//     //             {/* <span style={spanStyle}>{slideImage.caption}</span> */}
-//     //           </div>
-//     //         </div>
-//     //       ))} 
-//     //     </Slide>
-//     //   </div>
-//     // <div style={{ backgroundColor: "#F5F5F5", padding: "10px" }}>
-//     //   <Slide>
-//     //     <div className="each-slide">
-//     //       {slideImages.map((image, idx) => 
-//     //         // {idx % 4 === 0 && <div className="each-slide">}
-//     //         <img src={image.image} style={{ height: 500, marginLeft: 10 }}></img>
-//     //       )}
-//     //     </div>
-//     //     {/* <div className="each-slide">
-//     //       <img src={slideImages[0]} style={{height: 500, marginLeft: 10}}></img>
-//     //       <img src={slideImages[1]} style={{height: 500,  marginLeft: 10}}></img>
-//     //       <img src={slideImages[2]} style={{height: 500,  marginLeft: 10}}></img>
-//     //       <img src={slideImages[3]} style={{height: 500,  marginLeft: 10}}></img>
-
-//     //     </div> */}
-//     //     {/* <div className="each-slide">
-//     //       <div style={{ backgroundImage: `url(${slideImages[1]})` }}></div>
-//     //     </div>
-//     //     <div className="each-slide">
-//     //       <div style={{ backgroundImage: `url(${slideImages[2]})` }}></div>
-//     //     </div> */}
-//     //   </Slide>
-//     // </div>
-//   );
-// };
-
-
 import React, { useState } from "react";
 
 
@@ -158,7 +61,7 @@ export const SlideImages = () => {
         itemClass="carousel-item-padding-40-px"
       >
           {slideImages.map((image, idx) =>
-            <img src={image.image} style={{ height: 500 }}></img>
+            <img src={image.image} style={{ height: 600 }}></img>
           )}
       </Carousel>
     </div>

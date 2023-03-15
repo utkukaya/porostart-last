@@ -8,68 +8,11 @@ const timeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 
 
 export default function Calendar() {
-    const convertDate = (date) => {
-        date = date.split("-");
-        var newDate = new Date(date[2], date[1] - 1, date[0]);
-        return newDate.getTime();
-    }
     const isMobile = () => {
         const { innerWidth: width, innerHeight: height } = window;
         return width < height;
     }
-    var eventList = [
-        // {
-        //     name: "Buyout",
-        //     date: Date.now(),
-        //     allDay: true,
-        // },
-        {
-            name: "Otofaji",
-            date: convertDate("14-01-2023"),
-            extra: {
-                icon: "M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09           4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z",
-                text: "7 People",
-            },
-        },
-        {
-            name: "Otofaji",
-            date: convertDate("14-02-2023"),
-            allDay: true
-            // extra: {
-            //     allDay: true,
-            //     icon: "M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09           4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z",
-            //     text: "7 People",
-            // },
-        },
-        {
-            name: "Otofaji",
-            date: convertDate("24-02-2023"),
-            allDay: true,
-            // extra: {
-            //     icon: "M 12 9.312 l -1.762 0.491 l 1.562 0.881 l -0.491 0.871 l -1.562 -0.881 l 0.491 1.762 l -0.963 0.268 l -0.76 -2.724 l -2.015 -1.126 v 1.939 l 2 2 l -0.707 0.707 l -1.293 -1.293 v 1.793 h -1 v -1.793 l -1.293 1.293 l -0.707 -0.707 l 2 -2 v -1.939 l -2.015 1.126 l -0.761 2.724 l -0.963 -0.268 l 0.491 -1.762 l -1.562 0.882 l -0.491 -0.871 l 1.562 -0.881 l -1.761 -0.492 l 0.269 -0.962 l 2.725 0.76 l 1.982 -1.11 l -1.983 -1.109 l -2.724 0.759 l -0.269 -0.962 l 1.762 -0.491 l -1.563 -0.882 l 0.491 -0.871 l 1.562 0.881 l -0.49 -1.762 l 0.963 -0.269 l 0.76 2.725 l 2.015 1.128 v -1.94 l -2 -2 l 0.707 -0.707 l 1.293 1.293 v -1.793 h 1 v 1.793 l 1.293 -1.293 l 0.707 0.707 l -2 2 v 1.94 l 2.016 -1.127 l 0.76 -2.725 l 0.963 0.269 l -0.492 1.761 l 1.562 -0.881 l 0.491 0.871 l -1.562 0.881 l 1.762 0.492 l -0.269 0.962 l -2.725 -0.76 l -1.982 1.11 l 1.982 1.109 l 2.725 -0.76 l 0.269 0.963 Z m 4 -5.812 v 7.525 c 0 1.57 -0.514 2.288 -1.41 3.049 c -1.011 0.859 -1.59 2.107 -1.59 3.426 c 0 2.481 2.019 4.5 4.5 4.5 s 4.5 -2.019 4.5 -4.5 c 0 -1.319 -0.579 -2.567 -1.589 -3.426 c -0.897 -0.762 -1.411 -1.48 -1.411 -3.049 v -7.525 c 0 -0.827 -0.673 -1.5 -1.5 -1.5 s -1.5 0.673 -1.5 1.5 Z m 5 0 v 7.525 c 0 0.587 0.258 1.145 0.705 1.525 c 1.403 1.192 2.295 2.966 2.295 4.95 c 0 3.59 -2.909 6.5 -6.5 6.5 s -6.5 -2.91 -6.5 -6.5 c 0 -1.984 0.892 -3.758 2.295 -4.949 c 0.447 -0.381 0.705 -0.94 0.705 -1.526 v -7.525 c 0 -1.934 1.567 -3.5 3.5 -3.5 s 3.5 1.566 3.5 3.5 Z m 0 14 c 0 1.934 -1.567 3.5 -3.5 3.5 s -3.5 -1.566 -3.5 -3.5 c 0 -1.141 0.599 -2.084 1.393 -2.781 c 1.01 -0.889 1.607 -1.737 1.607 -3.221 v -0.498 h 1 v 0.498 c 0 1.486 0.595 2.33 1.607 3.221 c 0.794 0.697 1.393 1.64 1.393 2.781 Z",
-            //     text: "7 People",
-            // },
-            // extra: {
-            //     icon: "M 12 9.312 l -1.762 0.491 l 1.562 0.881 l -0.491 0.871 l -1.562 -0.881 l 0.491 1.762 l -0.963 0.268 l -0.76 -2.724 l -2.015 -1.126 v 1.939 l 2 2 l -0.707 0.707 l -1.293 -1.293 v 1.793 h -1 v -1.793 l -1.293 1.293 l -0.707 -0.707 l 2 -2 v -1.939 l -2.015 1.126 l -0.761 2.724 l -0.963 -0.268 l 0.491 -1.762 l -1.562 0.882 l -0.491 -0.871 l 1.562 -0.881 l -1.761 -0.492 l 0.269 -0.962 l 2.725 0.76 l 1.982 -1.11 l -1.983 -1.109 l -2.724 0.759 l -0.269 -0.962 l 1.762 -0.491 l -1.563 -0.882 l 0.491 -0.871 l 1.562 0.881 l -0.49 -1.762 l 0.963 -0.269 l 0.76 2.725 l 2.015 1.128 v -1.94 l -2 -2 l 0.707 -0.707 l 1.293 1.293 v -1.793 h 1 v 1.793 l 1.293 -1.293 l 0.707 0.707 l -2 2 v 1.94 l 2.016 -1.127 l 0.76 -2.725 l 0.963 0.269 l -0.492 1.761 l 1.562 -0.881 l 0.491 0.871 l -1.562 0.881 l 1.762 0.492 l -0.269 0.962 l -2.725 -0.76 l -1.982 1.11 l 1.982 1.109 l 2.725 -0.76 l 0.269 0.963 Z m 4 -5.812 v 7.525 c 0 1.57 -0.514 2.288 -1.41 3.049 c -1.011 0.859 -1.59 2.107 -1.59 3.426 c 0 2.481 2.019 4.5 4.5 4.5 s 4.5 -2.019 4.5 -4.5 c 0 -1.319 -0.579 -2.567 -1.589 -3.426 c -0.897 -0.762 -1.411 -1.48 -1.411 -3.049 v -7.525 c 0 -0.827 -0.673 -1.5 -1.5 -1.5 s -1.5 0.673 -1.5 1.5 Z m 5 0 v 7.525 c 0 0.587 0.258 1.145 0.705 1.525 c 1.403 1.192 2.295 2.966 2.295 4.95 c 0 3.59 -2.909 6.5 -6.5 6.5 s -6.5 -2.91 -6.5 -6.5 c 0 -1.984 0.892 -3.758 2.295 -4.949 c 0.447 -0.381 0.705 -0.94 0.705 -1.526 v -7.525 c 0 -1.934 1.567 -3.5 3.5 -3.5 s 3.5 1.566 3.5 3.5 Z m 0 14 c 0 1.934 -1.567 3.5 -3.5 3.5 s -3.5 -1.566 -3.5 -3.5 c 0 -1.141 0.599 -2.084 1.393 -2.781 c 1.01 -0.889 1.607 -1.737 1.607 -3.221 v -0.498 h 1 v 0.498 c 0 1.486 0.595 2.33 1.607 3.221 c 0.794 0.697 1.393 1.64 1.393 2.781 Z",
-            //     text: "7 People",
-            // },
-        },
-        {
-            // sc-iBYQkv hbdeeM
-            name: "Otofaji",
-            date: convertDate("28-02-2023"),
-            allDay: true,
-            // extra: {
-            //     icon: "M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09           4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z",
-            //     text: "7 People",
-            // },
-        }
-    ];
-    // var myDate = "26-01-2023";
-    // myDate = myDate.split("-");
-    // var newDate = new Date(myDate[2], myDate[1] - 1, myDate[0]);
-    // console.log(newDate.getTime());
-    // console.log("dat:e ", Date.now())
+
 
     const translations = {
         turkish: {
@@ -92,12 +35,11 @@ export default function Calendar() {
 
     const dateSelectedFunction = (e) => {
         var date = e.day + "" + (e.month + 1) + "" + e.year
-        const test = document.getElementsByClassName("sc-iBYQkv hbdeeM");
-        console.log("test: ", test)
+        const test = document.getElementsByClassName("sc-iBYQkv");
         if (test.length > 0) {
             var eventInfo = info.eventInfos.find(x => x.id === date);
             if(eventInfo)
-                document.getElementsByClassName("sc-iBYQkv hbdeeM")[0].innerHTML = '<p>' + eventInfo.name + '</p><div></div>' + locationIcon + '<span style="padding-left: 10px; margin-bottom: 5px">' + eventInfo.location + '</span><div></div>' + timeIcon + '<span style="padding-left: 10px; margin-bottom: 5px">' + eventInfo.time + '</span><div></div><form action="' + eventInfo.biletixLink + '"><button style="background-color: black; border-radius: 0; width: 100px">Bilet AL</button></from>'
+                document.getElementsByClassName("sc-iBYQkv")[0].innerHTML = '<p>' + eventInfo.name + '</p><div></div>' + locationIcon + '<span style="padding-left: 10px; margin-bottom: 5px">' + eventInfo.location + '</span><div></div>' + timeIcon + '<span style="padding-left: 10px; margin-bottom: 5px">' + eventInfo.time + '</span><div></div><form action="' + eventInfo.biletixLink + '"><button style="background-color: black; border-radius: 0; width: 100px">Bilet AL</button></from>'
         }
     }
     return (

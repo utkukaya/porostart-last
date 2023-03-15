@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { info } from '../components/Data/info';
-import Team from '../components/Team/Team';
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+
 
 export default function Atölye() {
     const isMobile = () => {
@@ -11,6 +13,9 @@ export default function Atölye() {
     return (
         // <TeamMembers/>
         <>
+            <Link to="/">
+                <MdOutlineArrowBackIosNew size={20} style={{ marginLeft: isMobile() ? 10 : 50, marginTop: isMobile() ? 10 : 50 }} />
+            </Link>
             <div style={{
                 width: isMobile() ? "90%" : "800px", marginLeft: "auto", marginRight: "auto"
             }}>

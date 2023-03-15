@@ -4,6 +4,8 @@ import TheaterModal from '../components/theaterModal';
 import "../fonts/PTSans-Regular.ttf";
 import "../fonts/Quicksand-Regular.ttf"
 import "../fonts/Quicksand-Bold.ttf"
+import { Link } from 'react-router-dom';
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 const Oyun = () => {
     const isMobile = () => {
@@ -31,9 +33,12 @@ const Oyun = () => {
             backgroundSize: 'cover',
             backgroundColor: "rgba(255, 0, 0, 0.2)"
         }}>
+            <Link to="/">
+                <MdOutlineArrowBackIosNew size={20} style={{ marginLeft: isMobile() ? 10 : 50, marginTop: isMobile() ? 10 : 50 }} />
+            </Link>
             <div style={{ width: isMobile() ? "90%" : "800px", marginLeft: "auto", marginRight: "auto" }}>
-                <p style={{ color: "black", fontWeight: "500", fontFamily: "Quicksand", fontSize: "1.1rem", lineHeight: 1.8 }}>
-                    <span style={{ fontFamily: "Quicksand-Bold" }}>Oyun Hakkında:</span><br /><br />
+                <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
+                    <span style={{ fontFamily: "Inter-Bold" }}>Oyun Hakkında:</span><br /><br />
                     <span style={{ paddingLeft: isMobile() ? "0px" : "20%" }}>“Kendini boşuna harcamış olur insan,</span><br />
                     <span style={{ paddingLeft: isMobile() ? "0px" : "20%" }}>Dilediğine erer de sevinç duymazsa.</span><br />
                     <span style={{ paddingLeft: isMobile() ? "0px" : "20%" }}>Yıktığın hayat kendininki olsun daha iyi,</span><br />
@@ -48,7 +53,7 @@ const Oyun = () => {
                     dünyada sevgi ve barışa değil, totoliterizme dayalı bir anlayışın oluşturduğuna vurgu yapıyor.
                     <br />
                     <br />
-                    <span style={{ fontFamily: "Quicksand-Bold" }}>About Play:</span>
+                    <span style={{ fontFamily: "Inter-Bold" }}>About Play:</span>
                     <br />
                     <br />
                     The play is about a utopian life order inhabited by creatures called humanoids. The main
@@ -67,15 +72,15 @@ const Oyun = () => {
                     Oyun Süresi: 45 dk
                     <br />
                     <br />
-                    Yazan Yöneten Oynayan: <span style={{ fontFamily: "Quicksand-Bold" }}>Tolga Avcu</span><br />
-                    Yönetmen Yardımcısı:<span style={{ fontFamily: "Quicksand-Bold" }}> Duygu Yakasız </span><br />
-                    Hareket Düzeni: <span style={{ fontFamily: "Quicksand-Bold" }}>Yağmur Bilgin</span> <br />
-                    Reji Asistanları: <span style={{ fontFamily: "Quicksand-Bold" }}>Yalgın Ballıkaya, Melis Lara Seçkin </span><br />
-                    Işık Tasarım:<span style={{ fontFamily: "Quicksand-Bold" }}> Furkan Kaymaz</span><br />
-                    Afiş - Dekor Tasarım:<span style={{ fontFamily: "Quicksand-Bold" }}> Gül Yavuz </span><br />
-                    Dijital İçerik: <span style={{ fontFamily: "Quicksand-Bold" }}>Cihan Cem Demirsoy </span><br />
-                    Kostüm Tasarım : <span style={{ fontFamily: "Quicksand-Bold" }}>Selma Özelma Şahin </span><br />
-                    Ses Tasarım:<span style={{ fontFamily: "Quicksand-Bold" }}>Sinan Can Sarı Yapım: Poros Art Tiyatro</span> </p>
+                    Yazan Yöneten Oynayan: <span style={{ fontFamily: "Inter-Bold" }}>Tolga Avcu</span><br />
+                    Yönetmen Yardımcısı:<span style={{ fontFamily: "Inter-Bold" }}> Duygu Yakasız </span><br />
+                    Hareket Düzeni: <span style={{ fontFamily: "Inter-Bold" }}>Yağmur Bilgin</span> <br />
+                    Reji Asistanları: <span style={{ fontFamily: "Inter-Bold" }}>Yalgın Ballıkaya, Melis Lara Seçkin </span><br />
+                    Işık Tasarım:<span style={{ fontFamily: "Inter-Bold" }}> Furkan Kaymaz</span><br />
+                    Afiş - Dekor Tasarım:<span style={{ fontFamily: "Inter-Bold" }}> Gül Yavuz </span><br />
+                    Dijital İçerik: <span style={{ fontFamily: "Inter-Bold" }}>Cihan Cem Demirsoy </span><br />
+                    Kostüm Tasarım : <span style={{ fontFamily: "Inter-Bold" }}>Selma Özelma Şahin </span><br />
+                    Ses Tasarım:<span style={{ fontFamily: "Inter-Bold" }}>Sinan Can Sarı Yapım: Poros Art Tiyatro</span> </p>
                 {/* <Image ratio={imageRatio} src={image} /> */}
             </div>
             {/* <p>{title}</p> */}
