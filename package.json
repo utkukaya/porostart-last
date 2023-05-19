@@ -11,6 +11,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^1.4.0",
+    "draft-js": "^0.11.7",
     "particles-bg": "^2.5.5",
     "react": "^17.0.2",
     "react-bootstrap": "^2.7.0",
@@ -28,6 +30,8 @@
     "react-spring": "^9.6.1",
     "revo-calendar": "^3.2.3",
     "sass": "^1.57.1",
+    "sweetalert2": "^11.7.3",
+    "sweetalert2-react-content": "^5.0.7",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
