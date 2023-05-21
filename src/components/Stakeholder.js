@@ -8,7 +8,7 @@ export default function StakeHolder() {
         // console.log("cad: ", card)
     }
     return (
-        <div style={{padding: 50, alignItems: "center"}}>
+        <div style={{padding: 50, alignItems: "center", backgroundColor: "black"}}>
             {/* <p>UTKU</p> */}
             <img src="images/logo.jpeg" style={{ display: "block" ,width: "250px", marginLeft: "auto", marginRight: "auto"}}></img>
         </div>

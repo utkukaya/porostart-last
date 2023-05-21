@@ -7,36 +7,14 @@ import "../fonts/Quicksand-Bold.ttf"
 import { Link } from 'react-router-dom';
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
-const Oyun = () => {
+
+const Game1 = () => {
     const isMobile = () => {
         const { innerWidth: width, innerHeight: height } = window;
         return width < height;
     }
-    const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
-    const [image, setImage] = useState("")
-    const [imageRatio, setImageRatio] = useState(0.0)
-    useEffect(() => {
-        const localOyun = JSON.parse(localStorage.getItem("game"));
-        // console.log("localoyun: ", localOyun.title)
-        setTitle(localOyun.title)
-        setDescription(localOyun.description)
-        setImage(localOyun.image)
-        setImageRatio(localOyun.imageRatio)
-    }, [])
-
     return (
-        <div id="oyunlar" style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9))",
-            // backgroundImage: `url(images/card1.jpg)` ,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundColor: "rgba(255, 0, 0, 0.2)"
-        }}>
-            <Link to="/">
-                <MdOutlineArrowBackIosNew size={20} style={{ marginLeft: isMobile() ? 10 : 50, marginTop: isMobile() ? 10 : 50 }} />
-            </Link>
-            <div style={{ width: isMobile() ? "90%" : "800px", marginLeft: "auto", marginRight: "auto" }}>
+        <div style={{ width: isMobile() ? "90%" : "800px", marginLeft: "auto", marginRight: "auto" }}>
                 <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
                     <span style={{ fontFamily: "Inter-Bold" }}>Oyun Hakkında:</span><br /><br />
                     <span style={{ paddingLeft: isMobile() ? "0px" : "20%" }}>“Kendini boşuna harcamış olur insan,</span><br />
@@ -83,6 +61,40 @@ const Oyun = () => {
                     Ses Tasarım:<span style={{ fontFamily: "Inter-Bold" }}>Sinan Can Sarı Yapım: Poros Art Tiyatro</span> </p>
                 {/* <Image ratio={imageRatio} src={image} /> */}
             </div>
+    )
+}
+const Oyun = () => {
+    const isMobile = () => {
+        const { innerWidth: width, innerHeight: height } = window;
+        return width < height;
+    }
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
+    const [image, setImage] = useState("")
+    const [imageRatio, setImageRatio] = useState(0.0)
+    const [gameId, setGameId] = useState(0)
+    useEffect(() => {
+        const localOyun = JSON.parse(localStorage.getItem("game"));
+        // console.log("localoyun: ", localOyun.title)
+        setGameId(localOyun.id)
+        setTitle(localOyun.title)
+        setDescription(localOyun.description)
+        setImage(localOyun.image)
+        setImageRatio(localOyun.imageRatio)
+    }, [])
+
+    return (
+        <div id="oyunlar" style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9))",
+            // backgroundImage: `url(images/card1.jpg)` ,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundColor: "rgba(255, 0, 0, 0.2)"
+        }}>
+            <Link to="/">
+                <MdOutlineArrowBackIosNew size={20} style={{ marginLeft: isMobile() ? 10 : 50, marginTop: isMobile() ? 10 : 50 }} />
+            </Link>
+            {gameId === 1 ? <Game1 /> : null }
             {/* <p>{title}</p> */}
             <SlideImages />
         </div>

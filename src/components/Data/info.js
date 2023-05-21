@@ -50,7 +50,6 @@ export const teamMemberDuygu = () => {
     return (
         <div style={{ fontFamily: "Inter-Thick" }}>
 
-            <li>Duygu Yakasız</li>
             <li>1991 yılında doğdu.</li>
             <li>Konya Selçuk Üniversitesi, Dilek Sabancı Konservatuvarı Sahne Sanatları Tiyatro Programı
                 Oyunculuk Bölümü’nden 2021 yılında mezun oldu. Poros Art oluşumunun “Otofaji” adlı ilk
@@ -73,15 +72,15 @@ export const teamMemberDuygu = () => {
             <br />
 
             <li>“Temel Oyunculuk”, Nadir Sarıbacak (Kumbaracı50 / 2015)</li>
-            <br />
-            <span style={{ fontFamily: "Inter-Bold" }}>Tiyatro Atölyesi:
+            {/* <br /> */}
+            {/* <span style={{ fontFamily: "Inter-Bold" }}>Tiyatro Atölyesi:
                 <br />
-            </span>
-            <br />
+            </span> */}
+            {/* <br /> */}
             <li>EBBŞT Gençlik Sahnesi Projesi** (2017)</li>
-            <li>“Oyunculukta Stilizasyon”, Fatma Kandemir Şahin ,2018</li>
+            <li>“Oyunculukta Stilizasyon”, Fatma Kandemir Şahin, 2018</li>
             <li>“Oyuncunun Nefes ve Ses Kullanımı”, Pınar Arık Ateş 2018</li>
-            <li>“Oyunculuk Biçemleri ve Eylem İlişkisi” , Selçuk Göldere, 2019</li>
+            <li>“Oyunculuk Biçemleri ve Eylem İlişkisi”, Selçuk Göldere, 2019</li>
             <p>** Gençlik Sahnesi Projesi: Oyunculuk-Diksiyon- Hareket/ Dans- Dramaturgi alanında, Emre
                 BASALAK koordinatörlüğünde Pınar Bekaroğlu, Sibel ARICAN, Özlem BAYKARA, Özlem BOYACI
                 tarafından yürütülen, dokuz ay süren yerel bir projedir.</p>
@@ -124,11 +123,11 @@ export const teamMemberYagmur = () => {
             <li>Fiziksel tiyatro atölyesi (Jacques Lecoq)-Ömer Cem Çoltu (2019)</li>
             <li>Meisner tekniği-Ömer Cem Çoltu (2021)</li>
             <li>Çağdaş dans tekniği dersi-Özge Midilli (2022)</li>
-            <li>Hoek kolektif ile anda doğaçlama pratikleri-Victoria Kenett/Dünya Narlı/Theo Marion-Wuillemin/
-                <li>Elise Ludinard (2022)</li>
-                <li>Somatik farkındalık ve çağdaş dans tekniği-Aslı Öztürk (2022)</li>
-                <li></li>Kontak doğaçlama jam-Dilek Üstünalan/Yağmur Kutlar (2023)</li>
+            <li>Hoek kolektif ile anda doğaçlama pratikleri-Victoria Kenett/Dünya Narlı/Theo Marion-Wuillemin/</li>
 
+            <li>Elise Ludinard (2022)</li>
+            <li>Somatik farkındalık ve çağdaş dans tekniği-Aslı Öztürk (2022)</li>
+            <li>Kontak doğaçlama jam-Dilek Üstünalan/Yağmur Kutlar (2023)</li>
         </div>
     )
 }
@@ -238,6 +237,38 @@ export const teamMemberSeyithan = () => {
 }
 
 
+export const teamMemberEdaErtem = () => {
+    return (
+
+        <div style={{ fontFamily: "Inter-Thick" }}>
+            < li >1996 yılında doğdu.
+            </li >
+            <li>Karadeniz Teknik Üniversitesi İşletme Bölümü 2020 yılı mezunudur.</li>
+            <li>Şu an Antalya Devlet Konservatuvarı Tiyatro Anasanat Dalı Oyunculuk Bölümü öğrencisidir.</li>
+            {/* <li>Poros Art'ta ...... görevini üstlenmektedir.</li> */}
+            <br />
+            <span style={{ fontFamily: "Inter-Bold" }}>Yer Aldığı Projeler:
+                <br />
+            </span>
+            <br />
+            <li>Artiz Mektebi / Yönetmen: Berfun BEŞEL / Trabzon Cep Tiyatrosu (2018)</li>
+            <li>Cambazın Cenazesi / Yönetmen: Ahmet PARMAK / Trabzon Seyir Tiyartosu (2019)</li>
+            <br />
+            <span style={{ fontFamily: "Inter-Bold" }}>Katıldığı Atölyeler:
+                <br />
+            </span>
+            <br />
+            <li>Gestalt Oyunculuk ve Sahneleme Tekniği: Birkan GÖRGÜN (Trabzon Uluslararası Tiyatro Festivali 2019)</li>
+            <li>Oyunculuk Atölyesi: Zeynep NUTKU, Erk BİLGİÇ ( Tiyatrohane 2020)</li>
+            <li>Laban Tekniği Atölyesi: Monique MASIUS (Tiyatrohane 2022)</li>
+            <li>Doğaçlama ve Oyun Atölyesi: Sezer SARIBARDAK (Panda Fikir Sanat 2022)</li>
+            <li>Tai Chi ve Qigong Atölyesi: Erdoğan KAPLAN (Poros Art Tiyatro 2023)</li>
+            <li>Başlangıç Gerçek Oyun Atölyesi: Emre BASALAK (Poros Art Tiyatro 2023)</li>
+
+        </div>
+    )
+}
+
 export const aboutUsDescription = () => {
     return (
         <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
@@ -258,9 +289,32 @@ export const aboutUsDescription = () => {
 
 
 export const atölyeDescription = () => {
+
     return (
         <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
-            <span style={{ fontFamily: "Inter-Bold" }}>Poros Art Atölye</span><br /><br />
+            <span style={{ fontFamily: "Inter-Bold" }}>Emre Basalak İle Başlangıç Gerçek Oyun</span><br /><br />
+            Gerçek ve oyun çatışmasından bir an önce, başlangıçtayız. Güven duygusunun bizi oyuna ve gerçeğe yaklaştırdığı,
+            bir an’dayız. Biraz sonra herkes, kendi alanlarının esnek yapısına şahit olacak süreçler yaşarken; dinlemek,
+            duymak, görmek sorgularında kendi merkezine odaklanıyor.
+            <br /><br />
+
+            Gerçek zamanda olmanın oyunla, oyunun da gerçek zamanla eşgüdümlü bir çalışma içerisinde olduğunu savunan @emrebasalak ’ın
+            yürüttüğü bu atölye çalışmasında, oyuncular kendi yöntemlerini araştıran kişilere dönüşürken başka bir oyuncu kişisi oyuna
+            girdiği anda dengenin nereye gittiğini sorguluyor.
+
+            <br /><br />
+
+            Hem düşünmemizi hem de anda kalmamızı isteyen bu zorlayıcı atölye, birlikte oyun oynamanın keyfini yeniden hatırlatıyor.
+
+            <br /><br />
+        </p>
+    )
+}
+
+export const atölyeDescriptionTwo = () => {
+    return (
+        <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
+            <span style={{ fontFamily: "Inter-Bold" }}>Erdoğan Kaplan ile TAI CHI VE QIGONG</span><br /><br />
             Sahne sanatları eğitiminde nefes ve beden çalışmaları zihinsel ve fiziksel denge açısından önemli
             bir yere sahiptir. Tai Chi ve Qigong kişinin kendi bedeniyle daha da bütünleşmesini sağlayacak bir
             çalışma disiplini oluşturur.            <br /><br />
@@ -269,8 +323,24 @@ export const atölyeDescription = () => {
             itki ile oyuncunun performansını doğrudan etkilemektedir.Gösterge bilimsel olarak irdelenen
             sahne düşünceleri alt üst etmeye çalışan yöntemleri araştırır..<br /><br />
 
-            Tai Chi ve Qigong çalışmalarının bu yapıda uyandırdığı reformları birlikte öğrenmek için Erdoğan
-            Kaplan ile 10 Mart’ta İpekten Sahne‘de atölye çalışması gerçekleştireceğiz.<br /><br />
+
+            Erdoğan Kaplan ile icraya dayalı bir yapının, doğru itim bulunuşunu sahnede beraber araştırdık. Performatif pratiklerin
+            çalışma metodlarına temas eden Tai Chi ve Qigong’u spotlar altında İpekten Sane’de çalışmak çok besleyiciydi.<br /><br />
+        </p>
+    )
+}
+
+export const atölyeDescriptionThree = () => {
+    return (
+        <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
+            <span style={{ fontFamily: "Inter-Bold" }}>Doçent Doktor Veysi Çeri ile Doğal Afet Sonrası Çocuklarla İletişim</span><br /><br />
+            Doç. Dr. Veysi Çeri ile “Doğal Afet Sonrası Çocuklarla İletişim” başlıklı konuşma programımız 12 Mart Pazar günü İpekten Sahne’de 
+            ipekten Sahne’de gerçekleşecekti.<br /><br />
+
+            Kahramanmaraş merkezli depremler sonrasında toplumsal travmaların merkezinde olan çocuklar, yetişkinlerin davranışlarını güvence 
+            olarak alırlar. Bu süreçte çocuklar için saha ve saha dışında gerçekleşen gönüllülük çalışmaları esnasında yapılanan iletişim 
+            konusunu Doç. Dr. Veysi Çeri ile konuşuyoruz.<br /><br />
+
         </p>
     )
 }
@@ -350,14 +420,14 @@ export const info = {
             memberInfo: teamMemberDuygu()
         },
         {
-            firstName: "Yağmur Sultan Bilgin",
-            image: "images/userImage.png",
-            memberInfo: teamMemberYagmur()
+            firstName: "Seyithan Tokkarabudak",
+            image: "images/seyithanTokkarabudak.png",
+            memberInfo: teamMemberSeyithan()
         },
         {
-            firstName: "Melis Lara Seçkin",
-            image: "images/melisLaraSeckin.png",
-            memberInfo: teamMemberMelis()
+            firstName: "Eda Eğilmez",
+            image: "images/edaEgilmez.png",
+            memberInfo: teamMemberEda()
         },
         {
             firstName: "Yalgın Ballıkaya",
@@ -365,15 +435,19 @@ export const info = {
             memberInfo: teamMemberYalgın()
         },
         {
-            firstName: "Eda Eğilmez",
-            image: "images/edaEgilmez.png",
-            memberInfo: teamMemberEda()
+            firstName: "Melis Lara Seçkin",
+            image: "images/melisLaraSeckin.png",
+            memberInfo: teamMemberMelis()
         },
-
         {
-            firstName: "Seyithan Tokkarabudak",
-            image: "images/seyithanTokkarabudak.png",
-            memberInfo: teamMemberSeyithan()
+            firstName: "Eda Ertem",
+            image: "images/edaErtem.png",
+            memberInfo: teamMemberEdaErtem()
+        },
+        {
+            firstName: "Yağmur Sultan Bilgin",
+            image: "images/userImage.png",
+            memberInfo: teamMemberYagmur()
         }
     ],
     eventList: [
@@ -434,4 +508,6 @@ export const info = {
     ],
     aboutUsDescription: aboutUsDescription(),
     atölyeDescription: atölyeDescription(),
+    atölyeDescriptionTwo: atölyeDescriptionTwo(),
+    atölyeDescriptionThree: atölyeDescriptionThree(),
 }

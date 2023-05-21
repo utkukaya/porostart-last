@@ -94,6 +94,14 @@
   }
 
 
+  @media screen and (min-width: 1000px) {
+
+    .container-theater {
+      min-width: 420px;
+    }
+  
+  }
+
 @media screen and (max-width: 1000px) {
 
 	.container-theater {
@@ -137,6 +145,7 @@
     margin-bottom: 27px;
     line-height: 1.5;
     font-size: 16px;
+    max-width: 400px;
     @media screen and (min-width: 576px) {
       font-size: 18px;
     }

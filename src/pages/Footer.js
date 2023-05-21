@@ -39,17 +39,17 @@ class Footer extends Component {
 
     const networks = social.map(function (network) {
       return (
-        <SocialIcon url={network.url} bgColor={"white"} style={{ marginLeft: "20px", height: 35, width: 35, }} />
+        <SocialIcon url={network.url} bgColor={"black"} style={{ marginLeft: "20px", height: 35, width: 35, }} />
 
       );
     });
 
     return (
       isMobile() ?
-        <footer style={{ backgroundColor: "black", flexDirection: "column" }}>
+        <footer style={{ backgroundColor: "white", flexDirection: "column" }}>
           <Fade bottom>
-            <ul className="copyright" style={{ width: "100%", paddingTop: 50, paddingBottom: 50, marginLeft: "auto", marginRight: "auto" }}>
-              <div style={{ paddingTop: 0 }}>
+            <ul className="copyright" style={{ width: "100%", paddingTop: 50, paddingBottom: 50, marginLeft: "auto", marginRight: "auto", backgroundColor: "white" }}>
+              <div style={{ paddingTop: 0, }}>
                 {networks}
               </div>
               <div style={{ width: "90%", marginLeft: "auto", marginTop: 35 }}>
@@ -62,9 +62,9 @@ class Footer extends Component {
           </Fade>
         </footer>
         :
-        <footer style={{ backgroundColor: "black", flexDirection: "row", paddingBottom: 20 }}>
+        <footer style={{ backgroundColor: "white", flexDirection: "row", paddingBottom: 20 }}>
           <Fade bottom>
-            <ul className="copyright" style={{ width: "100%", paddingTop: 50, paddingBottom: 50, marginLeft: "auto", marginRight: "auto", backgroundColor: "black" }}>
+            <ul className="copyright" style={{ width: "100%", paddingTop: 50, paddingBottom: 50, marginLeft: "auto", marginRight: "auto", backgroundColor: "white" }}>
               <div style={{ width: "50%", float: "left" }}>
                 &copy; Copyright 2023 POROS ART
               </div>

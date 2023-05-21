@@ -5,6 +5,7 @@ const Oyunlar = () => {
   return (
     <div id="oyunlar">
       <TheaterModal />
+
     </div>
   );
 }

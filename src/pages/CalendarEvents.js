@@ -3,7 +3,7 @@ import Calendar from '../components/Calendar';
 
 const CalendarEvents = () =>{
   return (
-    <div id="calendar" style={{backgroundColor: "black"}}>
+    <div id="calendar" style={{backgroundColor: "white"}}>
       <Calendar/>
       {/* <h3>Cats</h3>
       <div>

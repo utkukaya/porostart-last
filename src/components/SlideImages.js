@@ -22,23 +22,33 @@ export const SlideImages = () => {
       slidesToSlide: 1 // optional, default to 1.
     }
   };
-  const slideImages = [{
-    image: "images/image1.jpg"
-  },
-  {
-    image: "images/image2.jpg"
-  },
-  {
-    image: "images/image3.jpg"
-  },
-  {
-    image: "images/image4.jpg"
-  },
-  {
-    image: "images/image5.jpg"
-  }
-  ]
+  const slideImages = JSON.parse(localStorage.getItem("game")).id === 1 ?
+    [
 
+      {
+        image: "images/image7.jpg"
+      },
+      {
+        image: "images/image8.png"
+      },
+      {
+        image: "images/image9.jpg"
+      },
+    ]
+    :
+    [
+
+      {
+        image: "images/image10.jpg"
+      },
+      {
+        image: "images/image11.jpg"
+      },
+      {
+        image: "images/image12.jpg"
+      },
+     
+    ]
   return (
     <div style={{ width: "90%", marginLeft: "auto", marginRight: "auto", paddingTop: 100 }}>
       <Carousel
@@ -60,9 +70,9 @@ export const SlideImages = () => {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-          {slideImages.map((image, idx) =>
-            <img src={image.image} style={{ height: 600 }}></img>
-          )}
+        {slideImages.map((image, idx) =>
+          <img src={image.image} style={{ height: 600 }}></img>
+        )}
       </Carousel>
     </div>
   );
