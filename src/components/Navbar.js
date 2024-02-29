@@ -4,6 +4,10 @@ import { SocialIcon } from 'react-social-icons';
 import icon from "./icon";
 import { BrowserRouter, Link } from 'react-router-dom';
 import "./component-style/media-queries.css";
+import {
+  MDBBtn
+}
+  from 'mdb-react-ui-kit';
 
 const Navbar = () => {
   const isMobile = () => {
@@ -73,34 +77,40 @@ const Navbar = () => {
 
         </div>
       </div>
-      <nav id="nav-wrap" style={{zIndex: 120000}}>
+      <nav id="nav-wrap" style={{ zIndex: 120000 }}>
         <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
           {/* Show navigation */}
-          <div class="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
+          <div className="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
         </a>
         <a className="mobile-btn" href="#home" title="Hide navigation">
-          <div class="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
+          <div className="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
 
           {/* Hide navigation */}
         </a>
 
         <ul id="nav" className="nav">
-          <li className="current" style={{fontFamily: "Inter-Bold"}}>
+          <li className="current" style={{ fontFamily: "Inter-Bold" }}>
             <Link to="/hakkımızda">HAKKIMIZDA</Link>
           </li>
-          <li style={{fontFamily: "Inter-Bold"}}>
+          <li style={{ fontFamily: "Inter-Bold" }}>
             <Link to="/ekip">EKİP</Link>
           </li>
 
-          <li style={{fontFamily: "Inter-Bold"}}> 
+          <li style={{ fontFamily: "Inter-Bold" }}>
             <a className="smoothscroll" href="#oyunlar">
               OYUNLAR
             </a>
           </li>
-          <li style={{fontFamily: "Inter-Bold"}}>
-            <Link to="/atölye">ATÖLYE</Link>
+          <li style={{ fontFamily: "Inter-Bold" }}>
+          <a className="smoothscroll" href="#atölye">
+
+            {/* <Link to="/atölye"> */}
+              ATÖLYE
+              {/* </Link> */}
+            </a>
+
           </li>
-          <li style={{fontFamily: "Inter-Bold"}}>
+          <li style={{ fontFamily: "Inter-Bold" }}>
             <a className="smoothscroll" href="https://www.biletix.com/etkinlik/2CB16/TURKIYE/tr">
               BİLET AL
             </a>
@@ -110,18 +120,22 @@ const Navbar = () => {
 
       <div className="left" >
         <ul className="navbar" >
-          <li  style={{fontSize: "10px"}}>
+          <li style={{ fontSize: "10px" }}>
             <Link to="/hakkımızda" style={{ fontWeight: 500 }}>HAKKIMIZDA</Link>
           </li>
           <li className="current">
-          <Link to="/ekip" style={{ fontWeight: 500 }}>EKİP</Link>
+            <Link to="/ekip" style={{ fontWeight: 500 }}>EKİP</Link>
           </li>
           <li>
             <a href="#oyunlar" style={{ fontWeight: 500 }}>OYUNLAR</a>
           </li>
 
           <li>
-            <Link to="/atölye" style={{ fontWeight: 500 }}>ATÖLYE</Link>
+          <a href="#atölye" style={{ fontWeight: 500 }}>
+            {/* <Link to="/atölye" style={{ fontWeight: 500 }}> */}
+              ATÖLYE
+              {/* </Link> */}
+              </a>
           </li>
           <li>
             <a className="smoothscroll" href="https://www.biletix.com/etkinlik/2CB16/TURKIYE/tr" style={{ fontWeight: 500 }}>
@@ -137,8 +151,25 @@ const Navbar = () => {
         </a>
       </div>
       <div className="right">
-        <ul style={{ height: 20 }}>{networks}</ul>
+        <ul style={{ height: 20 }}>{networks}
+          {JSON.parse(localStorage.getItem("user"))?.token &&
+            <MDBBtn
+              outline
+              className='mx-2 px-2'
+              color='white'
+              size='sm'
+              style={{ color: 'white', fontSize: 10 }}
+              onClick={() => {
+                localStorage.removeItem("user")
+              }}
+            >
+              Logout
+            </MDBBtn>
+          }
+        </ul>
+
       </div>
+
 
     </header>
   );

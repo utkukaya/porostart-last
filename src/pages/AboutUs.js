@@ -10,11 +10,6 @@ export default function AboutUs() {
         return width < height;
     }
 
-    const teamMembers = info.team.map(function (teamMember) {
-        return (
-            <Team firstName={teamMember.firstName} image={teamMember.image} memberInfo={teamMember.memberInfo} />
-        );
-    });
 
     return (
         <>

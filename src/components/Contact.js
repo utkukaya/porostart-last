@@ -15,7 +15,6 @@ class Contact extends Component {
     const message = "asdassad";
 
     const onSubmit = () => {
-      console.log("geldi")
     }
 
     return (

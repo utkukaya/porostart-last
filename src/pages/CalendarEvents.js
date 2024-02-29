@@ -1,10 +1,12 @@
 import React from 'react';
 import Calendar from '../components/Calendar';
 
-const CalendarEvents = () =>{
+const CalendarEvents = () => {
+
   return (
-    <div id="calendar" style={{backgroundColor: "white"}}>
-      <Calendar/>
+    <div id="calendar" style={{ backgroundColor: "white" }}>
+     
+      <Calendar />
       {/* <h3>Cats</h3>
       <div>
         <img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg?resize=750px:*"/>

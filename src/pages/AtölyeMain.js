@@ -1,9 +1,9 @@
 import React from 'react';
 import AtolyeModal from '../components/AtolyeModal';
 
-const AtölyeMain = () => {
+const  AtölyeMain = () => {
   return (
-    <div id="oyunlar" style={{backgroundColor: "black"}}>
+    <div id="atölye" style={{backgroundColor: "black"}}>
       <AtolyeModal />
     </div>
   );

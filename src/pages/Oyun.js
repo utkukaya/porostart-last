@@ -5,17 +5,24 @@ import "../fonts/PTSans-Regular.ttf";
 import "../fonts/Quicksand-Regular.ttf"
 import "../fonts/Quicksand-Bold.ttf"
 import { Link } from 'react-router-dom';
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { MdOutlineArrowBackIosNew, MdOutlineEdit, MdOutlineEditOff } from "react-icons/md";
+import MyEditor from '../components/MyEditor';
+import AppSettings from '../AppSettings';
+import axios from 'axios';
+import authHeader from '../auth/auth-header';
 
 
-const Game1 = () => {
+const Game1 = ({ content }) => {
     const isMobile = () => {
         const { innerWidth: width, innerHeight: height } = window;
         return width < height;
     }
     return (
+
         <div style={{ width: isMobile() ? "90%" : "800px", marginLeft: "auto", marginRight: "auto" }}>
-                <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+
+            {/* <p style={{ color: "black", fontWeight: "500", fontFamily: "Inter-Thick", fontSize: "1.1rem", lineHeight: 1.8 }}>
                     <span style={{ fontFamily: "Inter-Bold" }}>Oyun Hakkında:</span><br /><br />
                     <span style={{ paddingLeft: isMobile() ? "0px" : "20%" }}>“Kendini boşuna harcamış olur insan,</span><br />
                     <span style={{ paddingLeft: isMobile() ? "0px" : "20%" }}>Dilediğine erer de sevinç duymazsa.</span><br />
@@ -58,9 +65,9 @@ const Game1 = () => {
                     Afiş - Dekor Tasarım:<span style={{ fontFamily: "Inter-Bold" }}> Gül Yavuz </span><br />
                     Dijital İçerik: <span style={{ fontFamily: "Inter-Bold" }}>Cihan Cem Demirsoy </span><br />
                     Kostüm Tasarım : <span style={{ fontFamily: "Inter-Bold" }}>Selma Özelma Şahin </span><br />
-                    Ses Tasarım:<span style={{ fontFamily: "Inter-Bold" }}>Sinan Can Sarı Yapım: Poros Art Tiyatro</span> </p>
-                {/* <Image ratio={imageRatio} src={image} /> */}
-            </div>
+                    Ses Tasarım:<span style={{ fontFamily: "Inter-Bold" }}>Sinan Can Sarı Yapım: Poros Art Tiyatro</span> </p> */}
+            {/* <Image ratio={imageRatio} src={image} /> */}
+        </div>
     )
 }
 const Oyun = () => {
@@ -68,20 +75,83 @@ const Oyun = () => {
         const { innerWidth: width, innerHeight: height } = window;
         return width < height;
     }
+
+    const isAdmin = JSON.parse(localStorage.getItem("user"))?.token ?? false
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
     const [imageRatio, setImageRatio] = useState(0.0)
     const [gameId, setGameId] = useState(0)
+    const [content, setContent] = useState('')
+    const [editable, setEditable] = useState(false)
+    const [gameContent, setGameContent] = useState(null)
+    const token = JSON.parse(localStorage.getItem('user'))?.token
+
     useEffect(() => {
         const localOyun = JSON.parse(localStorage.getItem("game"));
-        // console.log("localoyun: ", localOyun.title)
         setGameId(localOyun.id)
         setTitle(localOyun.title)
         setDescription(localOyun.description)
         setImage(localOyun.image)
         setImageRatio(localOyun.imageRatio)
     }, [])
+
+    const handleClickEdit = (event) => {
+        event.stopPropagation()
+        // if(!editable){
+        //     setDescription(card.description)
+        //     setTitle(card.title)
+        // }
+        setEditable(!editable)
+    }
+
+    const getGameContent = async (gameId) => {
+        const response = await axios.get(AppSettings.ServiceUrl + '/Game/GetGameContent?gameId=' + gameId)
+        const resp = response.data
+        if (resp?.isSuccess) {
+            setGameContent(resp.data)
+            setContent(resp.data?.htmlCode)
+        }
+    }
+
+    useEffect(() => {
+        const localOyun = JSON.parse(localStorage.getItem("game"));
+        getGameContent(localOyun.id)
+    }, [])
+
+
+
+    const handleUpdateGameContent = async (newContent) => {
+        // const API_BASE_URL = "https://localhost:7039/api"
+        const headers = authHeader()
+
+        
+        var data = {
+            id: gameContent?.id ?? 0,
+            htmlCode: newContent,
+            gameId: gameId
+        }
+
+        const response = await axios.post(AppSettings.ServiceUrl + '/Game/UpdateGameContent', data, {
+            headers: {
+                // 'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+
+            }
+        })
+        const resp = response.data
+        if (resp?.isSuccess) {
+            const response = await axios.get(AppSettings.ServiceUrl + '/Game/GetGameContent?gameId=' + gameId)
+            const resp = response.data
+            if (resp?.isSuccess) {
+                setGameContent(resp.data)
+                setContent(resp.data?.htmlCode)
+            }
+
+        }
+        return response.data
+    }
 
     return (
         <div id="oyunlar" style={{
@@ -94,7 +164,27 @@ const Oyun = () => {
             <Link to="/">
                 <MdOutlineArrowBackIosNew size={20} style={{ marginLeft: isMobile() ? 10 : 50, marginTop: isMobile() ? 10 : 50 }} />
             </Link>
-            {gameId === 1 ? <Game1 /> : null }
+
+            {isAdmin &&
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: "auto" }}>
+                    {
+                        !editable ?
+                            <MdOutlineEdit size={20} style={{}} onClick={(e) => handleClickEdit(e)} />
+                            :
+                            <MdOutlineEditOff size={20} style={{}} onClick={(e) => handleClickEdit(e)} />
+
+                    }
+                </div>
+            }
+            {editable &&
+                <MyEditor
+                    content={content}
+                    setContent={setContent}
+                    handleUpdateContent={handleUpdateGameContent}
+                    handleCancel={() => setEditable(false)}
+                />
+            }
+            {<Game1 content={content} />}
             {/* <p>{title}</p> */}
             <SlideImages />
         </div>

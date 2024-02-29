@@ -1,6 +1,6 @@
 export let colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
-const convertDate = (date) => {
+export const convertDate = (date) => {
     date = date.split("-");
     var newDate = new Date(date[2], date[1] - 1, date[0]);
     return newDate.getTime();

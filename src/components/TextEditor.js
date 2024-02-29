@@ -21,7 +21,6 @@ const TextEditor = () => {
     const contentState = newEditorState.getCurrentContent();
     // Metnin işlenebilecek şekilde doğru formatta olduğundan emin olun
     const contentRaw = JSON.stringify(convertToRaw(contentState));
-    console.log(contentRaw);
   };
 
 

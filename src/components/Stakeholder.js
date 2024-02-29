@@ -5,7 +5,6 @@ import './styles.scss';
 
 export default function StakeHolder() {
     const handleClickCard = (card) => {
-        // console.log("cad: ", card)
     }
     return (
         <div style={{padding: 50, alignItems: "center", backgroundColor: "black"}}>
