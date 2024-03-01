@@ -6,7 +6,7 @@ import Ekip from "../pages/Ekip";
 import LoginForm from "../pages/Login";
 import Oyun from "../pages/Oyun";
 
-const router = createBrowserRouter([
+const router = ([
     {
         path: "/",
         element: <App />,

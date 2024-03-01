@@ -331,7 +331,7 @@ export default function TheaterModal() {
         return width < height;
     }
     return (
-        <div className="main">
+        <div className="oyunlar">
 
             {isAdmin && !createNewGame &&
                 <div style={{ textAlign: "center" }}>

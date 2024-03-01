@@ -431,7 +431,7 @@ export default function TheaterModal() {
                 ))} */}
                 {workshops.map((card, i) => (
 
-                    <div key={i} className="container-theater">
+                    <div key={i} className="container-theater" style={{marginTop: 20}}>
                         {/* <Info /> */}
                         <div className="row">
                             <div className="column" onClick={() => handleClickCard(card)}>

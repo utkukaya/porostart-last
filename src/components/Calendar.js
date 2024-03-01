@@ -1,4 +1,3 @@
-import { IDLE_FETCHER } from '@remix-run/router';
 import axios from 'axios';
 import { MDBBtn } from 'mdb-react-ui-kit';
 import React, { useEffect, useState } from 'react';

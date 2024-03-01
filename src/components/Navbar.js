@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Navbar.css"
 import { SocialIcon } from 'react-social-icons';
 import icon from "./icon";
@@ -10,10 +10,18 @@ import {
   from 'mdb-react-ui-kit';
 
 const Navbar = () => {
+  const [isShowNavigation, setIsShowNavigation] = useState(false)
   const isMobile = () => {
     const { innerWidth: width, innerHeight: height } = window;
     return width < height;
   }
+  const scroll = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsShowNavigation(false)
+  };
   const social = [
     {
       name: "instagram",
@@ -63,6 +71,9 @@ const Navbar = () => {
     cross: "dead",
     random: 10
   };
+  const toggleNavigation = () => {
+    setIsShowNavigation(!isShowNavigation);
+  };
   return (
     <header className='header'>
       {/* <ParticlesBg config={config} type="custom" bg={true} /> */}
@@ -77,20 +88,18 @@ const Navbar = () => {
 
         </div>
       </div>
-      <nav id="nav-wrap" style={{ zIndex: 120000 }}>
-        <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
-          {/* Show navigation */}
+      {/* <nav id="nav-wrap" style={{ zIndex: 120000 }}>
+        <a className="mobile-btn" onClick={() => setIsShowNavigation(true)} title="Show navigation">
           <div className="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
         </a>
-        <a className="mobile-btn" href="#home" title="Hide navigation">
+        <a className="mobile-btn" onClick={() => setIsShowNavigation(false)} title="Hide navigation">
           <div className="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
 
-          {/* Hide navigation */}
         </a>
-
+      {isShowNavigation && 
         <ul id="nav" className="nav">
           <li className="current" style={{ fontFamily: "Inter-Bold" }}>
-            <Link to="/hakkımızda">HAKKIMIZDA</Link>
+            <Link to="/aboutUs">HAKKIMIZDA</Link>
           </li>
           <li style={{ fontFamily: "Inter-Bold" }}>
             <Link to="/ekip">EKİP</Link>
@@ -104,9 +113,7 @@ const Navbar = () => {
           <li style={{ fontFamily: "Inter-Bold" }}>
           <a className="smoothscroll" href="#atölye">
 
-            {/* <Link to="/atölye"> */}
               ATÖLYE
-              {/* </Link> */}
             </a>
 
           </li>
@@ -116,26 +123,61 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
+        }
+      </nav> */}
+
+      <nav id="nav-wrap" style={{ zIndex: 120000 }}>
+        <a className="mobile-btn" onClick={toggleNavigation} title={isShowNavigation ? 'Hide navigation' : 'Show navigation'}>
+          <div className="line" style={{ width: "60%", borderBottom: "4px solid white", marginTop: "47.5%", marginLeft: "25%", position: "absolute" }}></div>
+        </a>
+        {isShowNavigation &&
+          <ul style={{
+            display: "block",
+            background: "#1f202496",
+          }}>
+            <li className="current" style={{ padding: 10, fontFamily: "Inter-Bold" }}>
+              <Link to="/aboutUs" onClick={toggleNavigation}>HAKKIMIZDA</Link>
+            </li>
+            <li style={{ padding: 10, fontFamily: "Inter-Bold" }}>
+              <Link to="/ekip" onClick={toggleNavigation}>EKİP</Link>
+            </li>
+            <li style={{ padding: 10, fontFamily: "Inter-Bold" }}>
+              <a className="smoothscroll" onClick={() => scroll("oyunlar")}>
+                OYUNLAR
+              </a>
+            </li>
+            <li style={{ padding: 10, fontFamily: "Inter-Bold" }}>
+              <a className="smoothscroll" onClick={() => scroll("atölye")}>
+                ATÖLYE
+              </a>
+            </li>
+            <li style={{ padding: 10, fontFamily: "Inter-Bold" }}>
+              <a href="https://www.biletix.com/etkinlik/2CB16/TURKIYE/tr" onClick={toggleNavigation}>
+                BİLET AL
+              </a>
+            </li>
+          </ul>
+        }
       </nav>
 
       <div className="left" >
         <ul className="navbar" >
           <li style={{ fontSize: "10px" }}>
-            <Link to="/hakkımızda" style={{ fontWeight: 500 }}>HAKKIMIZDA</Link>
+            <Link to="/aboutUs" style={{ fontWeight: 500 }}>HAKKIMIZDA</Link>
           </li>
           <li className="current">
             <Link to="/ekip" style={{ fontWeight: 500 }}>EKİP</Link>
           </li>
           <li>
-            <a href="#oyunlar" style={{ fontWeight: 500 }}>OYUNLAR</a>
+            <a style={{ fontWeight: 500 }} onClick={() => scroll("oyunlar")}>OYUNLAR</a>
           </li>
 
           <li>
-          <a href="#atölye" style={{ fontWeight: 500 }}>
-            {/* <Link to="/atölye" style={{ fontWeight: 500 }}> */}
+            <a style={{ fontWeight: 500 }} onClick={() => scroll("atölye")}>
+              {/* <Link to="/atölye" style={{ fontWeight: 500 }}> */}
               ATÖLYE
               {/* </Link> */}
-              </a>
+            </a>
           </li>
           <li>
             <a className="smoothscroll" href="https://www.biletix.com/etkinlik/2CB16/TURKIYE/tr" style={{ fontWeight: 500 }}>
@@ -150,7 +192,7 @@ const Navbar = () => {
           <img style={{ width: isMobile() ? 100 : "100%", borderRadius: 8, marginTop: 20, marginLeft: isMobile() ? 0 : 30 }} src={"images/porosartlogowhite.png"}></img>
         </a>
       </div>
-      <div className="right">
+      <div key="logout" className="right">
         <ul style={{ height: 20 }}>{networks}
           {JSON.parse(localStorage.getItem("user"))?.token &&
             <MDBBtn
