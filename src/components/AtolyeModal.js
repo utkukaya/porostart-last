@@ -38,7 +38,7 @@ export default function TheaterModal() {
     const [createNewWorkshop, setCreateNewWorkshop] = useState(false)
     const handleClickCard = (card) => {
         localStorage.setItem("workshop", JSON.stringify(card))
-        navigate(`/atölye`)
+        navigate(`/workshop`)
     }
     const [selectedWorkshopId, setSelectedWorkshopId] = useState(0)
 
@@ -108,7 +108,6 @@ export default function TheaterModal() {
 
 
         const token = JSON.parse(localStorage.getItem('user'))?.token
-        console.log("token: ", token)
         const response = await axios.post(API_BASE_URL + '/Workshop/AddWorkshop',
             formData,
             {

@@ -15,7 +15,7 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/oyun" element={<Oyun />} />
         <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/atölye" element={<Atölye />} />
+        <Route path="/workshop" element={<Atölye />} />
         <Route path="/ekip" element={<Ekip />} />
         <Route exact path="/" element={<Main />} />
       </Routes>
